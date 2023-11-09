@@ -1,5 +1,6 @@
 import { CircularProgress, Grid } from "@material-ui/core";
 import { useSelector } from "react-redux";
+import PropTypes from "prop-types";
 
 import useStyles from "./styles";
 import { Post } from "./Post/Post";
@@ -23,4 +24,8 @@ export const Posts = ({ setCurrentId }) => {
       ))}
     </Grid>
   );
+};
+
+Posts.propTypes = {
+  setCurrentId: PropTypes.func,
 };

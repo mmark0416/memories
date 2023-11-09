@@ -6,6 +6,7 @@ import "dotenv/config";
 
 //routes
 import postRoutes from './routes/posts.router.js';
+import userRoutes from './routes/users.router.js';
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true}));
 app.use(cors());
 
 app.use('/posts', postRoutes);
+app.use('/user', userRoutes);
 
 const connection_url = process.env.MONGODB_URL;
 const port = process.env.PORT || 5000;

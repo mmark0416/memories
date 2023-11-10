@@ -5,6 +5,7 @@ import {
   updatePost,
   deletePost,
   likePost,
+  getPostsBySearch
 } from "../controllers/posts.controller.js";
 
 //middleware
@@ -12,6 +13,7 @@ import auth from "../middleware/auth.js";
 
 const router = Router();
 
+router.get("/search", getPostsBySearch);
 router.get("/", getPosts);
 router.post("/", auth, createPosts);
 router.patch("/:id", auth, updatePost);
